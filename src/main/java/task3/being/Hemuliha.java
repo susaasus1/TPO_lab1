@@ -2,26 +2,43 @@ package main.java.task3.being;
 
 import main.java.task3.notalive.Craft;
 import main.java.task3.notalive.Home;
+import main.java.task3.notalive.Size;
 import main.java.task3.notalive.Tea;
 
 
 public class Hemuliha extends Born {
 
-    private String descriptions = "маленькая ";
-    private Born whoInteractsWith = new Guests();
-    private Craft Where = new Home();
-    private Craft have = new Tea();
+    private Size descriptions;
+    private Born whoInteractsWith;
+    private Craft Where;
+    private Craft have;
 
     public Hemuliha() {
         setName("Хемулиха ");
     }
 
-    public String getDescriptions() {
+    public Size getDescriptions() {
         return descriptions;
+    }
+
+    public void setDescriptions(Size descriptions) {
+        this.descriptions = descriptions;
+    }
+
+    public void setWhere(Craft where) {
+        Where = where;
+    }
+
+    public void setHave(Craft have) {
+        this.have = have;
     }
 
     public Born getWhoInteractsWith() {
         return whoInteractsWith;
+    }
+
+    public void setWhoInteractsWith(Born whoInteractsWith) {
+        this.whoInteractsWith = whoInteractsWith;
     }
 
     public Craft getWhere() {
@@ -31,4 +48,5 @@ public class Hemuliha extends Born {
     public Craft getHave() {
         return have;
     }
+
 }

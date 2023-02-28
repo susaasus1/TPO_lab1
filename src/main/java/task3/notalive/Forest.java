@@ -3,6 +3,6 @@ package main.java.task3.notalive;
 public class Forest extends Place {
 
     public Forest() {
-        super("лесом.", "над");
+        super("лесом.", null);
     }
 }

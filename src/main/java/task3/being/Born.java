@@ -40,6 +40,10 @@ public abstract class Born {
         }
     }
 
+    public void setSkills(List<Spell> skills) {
+        this.skills = skills;
+    }
+
     public void setPronoun(String pronoun) {
         this.pronoun = pronoun;
     }

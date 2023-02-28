@@ -8,11 +8,16 @@ public class Kids extends Born {
     private Poster giveWhat;
     private Snusmumrik toWhom;
 
-    public Kids(Poster giveWhat, Roof whereClimbed, Snusmumrik toWhom) {
-        setName(" малыша ");
-        this.giveWhat = giveWhat;
+    public void setWhereClimbed(Roof whereClimbed) {
         this.whereClimbed = whereClimbed;
+    }
+
+    public void setToWhom(Snusmumrik toWhom) {
         this.toWhom = toWhom;
+    }
+
+    public Kids() {
+        setName("малыш");
     }
 
 

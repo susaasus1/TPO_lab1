@@ -9,9 +9,13 @@ public class Snusmumrik extends Born {
     private Poster whatUses;
     private Grass where = new Grass();
 
-    public Snusmumrik(Poster whatUses) {
+    public void setWhere(Grass where) {
+        this.where = where;
+    }
+
+    public Snusmumrik() {
         setName("Снюсмумрик.");
-        this.whatUses = whatUses;
+
     }
 
     public void setWhatUses(Poster whatUses) {

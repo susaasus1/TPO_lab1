@@ -45,7 +45,7 @@ public abstract class Place implements Craft {
         return name;
     }
 
-    private String getInfo() throws DescException {
+    public String getInfo() throws DescException {
         if (description == null) {
             throw new DescException("Нет информации по " + name);
         }
@@ -69,5 +69,9 @@ public abstract class Place implements Craft {
             System.err.print(ex.getMessage());
             return name;
         }
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

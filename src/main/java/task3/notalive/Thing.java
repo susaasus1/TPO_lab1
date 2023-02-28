@@ -60,4 +60,5 @@ public abstract class Thing implements Craft {
                 ", pronoun='" + pronoun + '\'' +
                 '}';
     }
+
 }
