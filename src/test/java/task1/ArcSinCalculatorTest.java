@@ -10,13 +10,13 @@ public class ArcSinCalculatorTest {
     static private final double delta = 0.1;
 
     @ParameterizedTest
-    @ValueSource(doubles = {0.34, 0.6, 0.75})
+    @ValueSource(doubles = {0.34, 0.6, 0.85})
     public void positiveNumbersTest(double value) {
         Assertions.assertEquals(Math.asin(value), ArcSinCalculator.asin(value), delta);
     }
 
     @ParameterizedTest
-    @ValueSource(doubles = {-0.34, -0.6, -0.75})
+    @ValueSource(doubles = {-0.34, -0.6, -0.82})
     public void negativeNumbersTest(double value) {
         Assertions.assertEquals(Math.asin(value), ArcSinCalculator.asin(value), delta);
     }
@@ -56,4 +56,11 @@ public class ArcSinCalculatorTest {
     public void negativeNumbersCloseToZeroTest(double value) {
         Assertions.assertEquals(Math.asin(value), ArcSinCalculator.asin(value), delta);
     }
+
+    @ParameterizedTest
+    @ValueSource(doubles = {-1, 1})
+    public void onePositiveNegativeTest(double value) {
+        Assertions.assertEquals(Math.asin(value), ArcSinCalculator.asin(value), delta);
+    }
+
 }

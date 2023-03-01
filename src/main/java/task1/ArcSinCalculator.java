@@ -13,7 +13,7 @@ public class ArcSinCalculator {
         double n = 2;
         double arcsin = x;
 
-        while (e > 0.0001) {
+        while (Math.abs(e) > 0.0001) {
             e = (numeratorCoeff * Math.pow(x, 2 * n - 1)) / (denominatorCoeff * (2 * n - 1));
             numeratorCoeff = numeratorCoeff * (2 * n - 1);
             denominatorCoeff = denominatorCoeff * 2 * n;
