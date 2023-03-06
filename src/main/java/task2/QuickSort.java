@@ -1,7 +1,14 @@
 package main.java.task2;
 
 public class QuickSort {
+    private BreadCrumbs crumbs;
+
+    public QuickSort(BreadCrumbs crumbs) {
+        this.crumbs = crumbs;
+    }
+
     public void sort(int[] arr, int low, int high) {
+        crumbs.addLowAndHighBorder(low, high);
         if (low < high) {
             int pivotIndex = partition(arr, low, high);
             sort(arr, low, pivotIndex - 1);
@@ -24,5 +31,9 @@ public class QuickSort {
         arr[i + 1] = arr[high];
         arr[high] = temp;
         return i + 1;
+    }
+
+    public BreadCrumbs getCrumbs() {
+        return crumbs;
     }
 }
