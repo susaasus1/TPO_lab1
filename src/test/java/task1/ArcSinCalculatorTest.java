@@ -3,6 +3,7 @@ package test.java.task1;
 import main.java.task1.ArcSinCalculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -73,11 +74,10 @@ public class ArcSinCalculatorTest {
         Assertions.assertEquals(Math.asin(value), ArcSinCalculator.asin(value), DELTA, "результаты Math.asin() и степенного ряда различаются при значении " + value);
     }
 
-    @ParameterizedTest
-    @ValueSource(doubles = {0})
+    @Test
     @DisplayName("Тест для проверки равности результата Math.asin() и степенного ряда при 0")
-    public void zeroTest(double value) {
-        Assertions.assertEquals(Math.asin(value), ArcSinCalculator.asin(value), DELTA, "результаты Math.asin() и степенного ряда различаются при значении " + value);
+    public void zeroTest() {
+        Assertions.assertEquals(Math.asin(0), ArcSinCalculator.asin(0), DELTA, "результаты Math.asin() и степенного ряда различаются при значении 0");
     }
 
     @ParameterizedTest
