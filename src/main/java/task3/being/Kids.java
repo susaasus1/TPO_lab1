@@ -1,14 +1,15 @@
 package main.java.task3.being;
+
+import main.java.task3.notalive.Place;
 import main.java.task3.notalive.Poster;
-import main.java.task3.notalive.Roof;
 
 public class Kids extends Born {
 
-    private Roof whereClimbed;
+    private Place whereClimbed;
     private Poster giveWhat;
     private Snusmumrik toWhom;
 
-    public void setWhereClimbed(Roof whereClimbed) {
+    public void setWhereClimbed(Place whereClimbed) {
         this.whereClimbed = whereClimbed;
     }
 
@@ -16,12 +17,16 @@ public class Kids extends Born {
         this.toWhom = toWhom;
     }
 
-    public Kids() {
-        setName("малыш");
+    public Kids(String name, String description) {
+        super.setName(name);
+        super.setDescription(description);
     }
 
+    public Kids(){
+        super.setName("малыш");
+    }
 
-    public Roof getWhereClimbed() {
+    public Place getWhereClimbed() {
         return whereClimbed;
     }
 
@@ -33,7 +38,9 @@ public class Kids extends Born {
         return toWhom;
     }
 
-    public void setGiveWhat(Poster giveWhat) {
-        this.giveWhat = giveWhat;
+    public void setGivePoster(Poster giveWhat) {
+        if (whereClimbed != null && whereClimbed.equals(giveWhat.getWhereCling())) {
+            this.giveWhat = giveWhat;
+        }
     }
 }

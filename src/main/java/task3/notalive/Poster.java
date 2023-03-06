@@ -1,5 +1,12 @@
 package main.java.task3.notalive;
 
+import main.java.task3.being.Born;
+
+import java.util.ArrayDeque;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 public class Poster extends Thing {
 
     private Craft whereSpin;
@@ -22,7 +29,8 @@ public class Poster extends Thing {
     }
 
     public void setWhereCling(Craft whereCling) {
-        this.whereCling = whereCling;
+        if (whereCling.getDescription().contains("просмоленная"))
+            this.whereCling = whereCling;
     }
 
     public Craft getTube() {
@@ -34,6 +42,7 @@ public class Poster extends Thing {
     }
 
     public Poster() {
+        super.setName("постер");
     }
 
     public Poster(Craft whereCling) {
@@ -91,6 +100,13 @@ public class Poster extends Thing {
         return pronoun;
     }
 
-
-
+    public String creatureWantToTake(ArrayDeque<Born> bornQueue) {
+        if (this.getDescription().equals("обычный")) {
+            super.setDescription("1 клочок бумаги");
+            return bornQueue.peek().getDescription();
+        } else if (this.getDescription().equals("тонкий") && whereCling.getDescription().contains("просмоленная")) {
+            super.setDescription(transformation() + bornQueue.size() + " клочка бумаги");
+        }
+        return null;
+    }
 }

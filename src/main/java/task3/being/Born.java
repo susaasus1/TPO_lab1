@@ -15,6 +15,8 @@ public abstract class Born {
     private List<Spell> skills = new ArrayList<Spell>();
     private String pronoun;
 
+    private String description;
+
     public void learn(Spell spell) {
         this.skills.add(spell);
     }
@@ -82,5 +84,13 @@ public abstract class Born {
                 ", skills=" + skills +
                 ", pronoun='" + pronoun + '\'' +
                 '}';
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return name + description;
     }
 }

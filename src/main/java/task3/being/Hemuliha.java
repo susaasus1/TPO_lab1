@@ -1,9 +1,6 @@
 package main.java.task3.being;
-
 import main.java.task3.notalive.Craft;
-import main.java.task3.notalive.Home;
 import main.java.task3.notalive.Size;
-import main.java.task3.notalive.Tea;
 
 
 public class Hemuliha extends Born {
