@@ -87,4 +87,11 @@ public class ArcSinCalculatorTest {
         Assertions.assertEquals(Math.asin(value), ArcSinCalculator.asin(value), DELTA, "результаты Math.asin() и степенного ряда различаются при значении " + value);
     }
 
+    @Test
+    @DisplayName("Тест для проверки корректности программы при параметре null")
+    public void checkNull() {
+        Double value = null;
+        Assertions.assertThrows(NullPointerException.class, () -> ArcSinCalculator.asin(value), "NullPointerException!");
+    }
+
 }
